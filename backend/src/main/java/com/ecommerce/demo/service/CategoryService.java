@@ -27,4 +27,13 @@ public class CategoryService {
         category1.setImageUrl(category.getImageUrl());
         return categoryRepository.save(category1);
     }
+
+    public void deleteCategory(String categoryId) {
+        categoryRepository.deleteById(Integer.parseInt(categoryId));
+    }
+
+    public Category findCategoryById(String categoryId) {
+        return categoryRepository.findById(Integer.parseInt(categoryId))
+                .orElseThrow(() -> new RuntimeException("Category does not exist with id: " + categoryId));
+    }
 }
