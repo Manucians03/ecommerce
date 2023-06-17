@@ -1,4 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import App from '../App.vue'
+import addCategory from '../views/Category/AddCategory.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -6,13 +8,12 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
+      component: App,
     },
     {
-      path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
+      path: "/category/add",
+      name: "addCategory",
+      component: addCategory
     }
   ]
 })
