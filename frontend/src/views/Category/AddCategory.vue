@@ -8,10 +8,10 @@
     <div class="row">
       <div class="col-3"></div>
       <div class="col-6">
-        <form action="">
+        <form>
           <div class="form-group">
             <label>Name</label>
-            <input type="text" class="form-control" v-model="categoryName">
+            <input type="text" class="form-control" v-model="categoryName" />
           </div>
           <div class="form-group">
             <label>Description</label>
@@ -19,51 +19,58 @@
           </div>
           <div class="form-group">
             <label>Image</label>
-            <input type="text" class="form-control" v-model="imageUrl">
+            <input type="text" class="form-control" v-model="imageUrl" />
           </div>
-          <button type="button" class="btn btn-primary" @click="addCategory">Submit</button>
+          <button type="button" class="btn btn-primary" @click="addCategory">
+            Submit
+          </button>
         </form>
       </div>
       <div class="col-3"></div>
     </div>
   </div>
 </template>
-
 <script>
-
-import axios from 'axios';
+import axios from "axios";
 import sweetalert from "sweetalert";
 export default {
-  data(){
+  data() {
     return {
-      categoryName:"",
-      description:"",
-      imageUrl:"",
+      categoryName: "",
+      description: "",
+      imageUrl: "",
     };
   },
   methods: {
-    addCategory(){
+    addCategory() {
+      console.log(this.categoryName, this.description);
       const newCategory = {
-          categoryName: this.categoryName,
-          description: this.description,
-          imageUrl: this.imageUrl,
-      }
-        const baseUrl = "http://localhost:8080";
-      axios.post(`${baseUrl}/category/create`, newCategory)
-          .then(() => {
-            sweetalert({
-              text: "Category added successfully",
-              icon: 'success'
-            });
-          }).catch((error) => {
-          console.log(error);
+        categoryName: this.categoryName,
+        description: this.description,
+        imageUrl: this.imageUrl,
+      };
+
+      const baseURL = "http://localhost:8080";
+
+      axios({
+        method: "post",
+        url: `${baseURL}/category/create`,
+        data: JSON.stringify(newCategory),
+        headers: {
+          "Content-Type": "application/json",
+        },
       })
-
-    }
+        .then(() => {
+          sweetalert({
+            text: "Category added successfully",
+            icon: "success",
+          });
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    },
   },
-  name: "addCategory"
-}
+};
 </script>
-
-<style scoped>
-</style>
+<style scoped></style>
