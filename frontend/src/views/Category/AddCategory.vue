@@ -66,15 +66,4 @@ export default {
 </script>
 
 <style scoped>
-.container-fluid {
-  padding: 0 15px;
-}
-
-.row.justify-content-center {
-  margin: 0;
-}
-
-.col-12.col-md-8.col-lg-6 {
-  padding: 15px;
-}
 </style>
