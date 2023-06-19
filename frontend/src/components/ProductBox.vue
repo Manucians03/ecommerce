@@ -4,7 +4,7 @@
         <div class="embed-responsive embed-responsive-16by9">
             <img
                 class="card-img-top embed-responsive-item"
-                :src="product.imageURL"
+                :src="product.imageUrl"
                 alt="Card image caption"
             />
         </div>

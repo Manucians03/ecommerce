@@ -1,8 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import App from '../App.vue'
-import addCategory from '../views/Category/AddCategory.vue'
-import Category from '../views/Category/Category.vue'
+import AddCategory from '../views/Category/AddCategory.vue'
+import ViewCategory from '../views/Category/ViewCategory.vue'
 import AddProduct from '../views/Product/AddProduct.vue'
+import ViewProduct from '../views/Product/ViewProduct.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -15,17 +16,22 @@ const router = createRouter({
     {
       path: "/category/add",
       name: "AddCategory",
-      component: addCategory
+      component: AddCategory
     },
     {
       path: "/category",
-      name: "category",
-      component: Category
+      name: "Category",
+      component: ViewCategory
     },
     {
       path: "/product/add",
       name: "AddProduct",
       component: AddProduct
+    },
+    {
+      path: "/product",
+      name: "Product",
+      component: ViewProduct
     }
   ]
 })
