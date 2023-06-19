@@ -73,4 +73,8 @@ export default {
   },
 };
 </script>
-<style scoped></style>
+<style scoped>
+input, textarea {
+  min-width: 600px;
+}
+</style>
