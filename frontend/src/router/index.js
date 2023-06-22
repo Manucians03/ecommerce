@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import App from '../App.vue'
+import Home from '../views/Home.vue'
 import AddCategory from '../views/Category/AddCategory.vue'
 import ViewCategory from '../views/Category/ViewCategory.vue'
 import AddProduct from '../views/Product/AddProduct.vue'
@@ -11,7 +11,7 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: App,
+      component: Home,
     },
     {
       path: "/category/add",

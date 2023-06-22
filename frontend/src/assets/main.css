@@ -4,6 +4,10 @@ body {
   background-color: aliceblue;
 }
 
+#app {
+  width: 100% !important; 
+}
+
 a,
 .green {
   text-decoration: none;
