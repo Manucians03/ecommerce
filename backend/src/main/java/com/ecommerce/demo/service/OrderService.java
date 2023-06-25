@@ -13,7 +13,7 @@ import java.util.*;
 @Service
 @RequiredArgsConstructor
 public class OrderService {
-    private final AuthenticationService authenticationService;
+    // private final AuthenticationService authenticationService;
     @Value("${STRIPE_SECRET_KEY}")
     private String apiKey;
     @Value("${BASE_URL}")
