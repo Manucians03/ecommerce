@@ -1,9 +1,9 @@
 <template>
-  <router-view
+  <router-view v-if="categories.length > 0 && products.length > 0"
   :baseURL="baseURL"
   :categories="categories"
   :products="products"
-  >
+  @fetchData="fetchData">
   </router-view>
 </template>
 
