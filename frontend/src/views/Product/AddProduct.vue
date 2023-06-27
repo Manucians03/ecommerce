@@ -26,7 +26,7 @@
                     </div>
                     <div class="form-group">
                         <label>Image Url</label>
-                        <input type="text"  v-model="imageURL" class="form-control" >
+                        <input type="text"  v-model="imageUrl" class="form-control" >
                     </div>
                     <div class="form-group">
                         <label>Price</label>
@@ -50,7 +50,7 @@
                 categoryId: null,
                 name: null,
                 description: null,
-                imageURL: null,
+                imageUrl: null,
                 price: null
             }
         },
@@ -60,7 +60,7 @@
                     categoryId: this.categoryId,
                     description: this.description,
                     name: this.name,
-                    imageUrl: this.imageURL,
+                    imageUrl: this.imageUrl,
                     price: this.price
                 };
 
@@ -70,6 +70,7 @@
                         text: "Product added",
                         icon: "success"
                     })
+                    this.$router.push({name: 'ViewProduct'});
                 }).catch((err)=> {
                     console.log("err", err);
                 })

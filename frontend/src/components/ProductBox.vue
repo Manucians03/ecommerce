@@ -1,6 +1,5 @@
-
 <template>
-    <div class="card h-100 w-100">
+    <div class="card h-100 w-100" style="margin-top: 10px">
         <div class="embed-responsive embed-responsive-16by9">
             <img
                 class="card-img-top embed-responsive-item"
@@ -10,10 +9,10 @@
         </div>
         <div class="card-body">
             <h5 class="card-title">{{ product.name }}</h5>
-            <p class="card-text">
-                {{ product.description.substring(0, 65) }}...
-            </p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+            <p class="card-text"> {{ product.description.substring(0, 65) }}</p>
+            <router-link :to="{name: 'EditProduct', params: { id: product.id }}">
+                <button class="btn btn-primary">Edit</button>
+            </router-link>
         </div>
     </div>
 </template>

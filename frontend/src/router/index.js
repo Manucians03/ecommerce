@@ -2,8 +2,10 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 import AddCategory from '../views/Category/AddCategory.vue'
 import ViewCategory from '../views/Category/ViewCategory.vue'
+import EditCategory from '../views/Category/EditCategory.vue'
 import AddProduct from '../views/Product/AddProduct.vue'
 import ViewProduct from '../views/Product/ViewProduct.vue'
+import EditProduct from '../views/Product/EditProduct.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -20,8 +22,13 @@ const router = createRouter({
     },
     {
       path: "/category",
-      name: "Category",
+      name: "ViewCategory",
       component: ViewCategory
+    },
+    {
+      path: "/category/edit/:id",
+      name: "EditCategory",
+      component: EditCategory
     },
     {
       path: "/product/add",
@@ -30,8 +37,13 @@ const router = createRouter({
     },
     {
       path: "/product",
-      name: "Product",
+      name: "ViewProduct",
       component: ViewProduct
+    },
+    {
+      path: "/product/edit/:id",
+      name: "EditProduct",
+      component: EditProduct
     }
   ]
 })
