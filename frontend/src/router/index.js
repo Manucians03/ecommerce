@@ -3,16 +3,18 @@ import Home from '../views/Home.vue'
 import AddCategory from '../views/Category/AddCategory.vue'
 import ViewCategory from '../views/Category/ViewCategory.vue'
 import EditCategory from '../views/Category/EditCategory.vue'
+import DetailCategory from '../views/Category/DetailCategory.vue'
 import AddProduct from '../views/Product/AddProduct.vue'
 import ViewProduct from '../views/Product/ViewProduct.vue'
 import EditProduct from '../views/Product/EditProduct.vue'
+import DetailProduct from '../views/Product/DetailProduct.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/',
-      name: 'home',
+      name: 'Home',
       component: Home,
     },
     {
@@ -31,6 +33,11 @@ const router = createRouter({
       component: EditCategory
     },
     {
+      path: "/category/:id",
+      name: "DetailCategory",
+      component: DetailCategory
+    },
+    {
       path: "/product/add",
       name: "AddProduct",
       component: AddProduct
@@ -44,6 +51,11 @@ const router = createRouter({
       path: "/product/edit/:id",
       name: "EditProduct",
       component: EditProduct
+    },
+    {
+      path: "/product/:id",
+      name: "DetailProduct",
+      component: DetailProduct
     }
   ]
 })
