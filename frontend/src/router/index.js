@@ -8,6 +8,7 @@ import AddProduct from '../views/Product/AddProduct.vue'
 import ViewProduct from '../views/Product/ViewProduct.vue'
 import EditProduct from '../views/Product/EditProduct.vue'
 import DetailProduct from '../views/Product/DetailProduct.vue'
+import SignIn from '../views/SignIn.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -56,6 +57,11 @@ const router = createRouter({
       path: "/product/:id",
       name: "DetailProduct",
       component: DetailProduct
+    },
+    {
+      path: "/signin",
+      name: "SignIn",
+      component: SignIn
     }
   ]
 })
