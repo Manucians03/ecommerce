@@ -9,6 +9,7 @@ import ViewProduct from '../views/Product/ViewProduct.vue'
 import EditProduct from '../views/Product/EditProduct.vue'
 import DetailProduct from '../views/Product/DetailProduct.vue'
 import SignIn from '../views/SignIn.vue'
+import SignUp from '../views/SignUp.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -62,6 +63,11 @@ const router = createRouter({
       path: "/signin",
       name: "SignIn",
       component: SignIn
+    },
+    {
+      path: "/signup",
+      name: "SignUp",
+      component: SignUp
     }
   ]
 })

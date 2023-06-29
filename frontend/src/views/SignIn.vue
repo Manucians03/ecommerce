@@ -3,7 +3,7 @@
       <div class="row">
         <div class="col-12 justify-content-center d-flex flex-row pt-5">
           <div id="signin-div" class="flex-item border">
-            <h2 class="pt-4 ps-4">Sign in</h2>
+            <h2 class="pt-4 ps-4">Sign In</h2>
             <form @submit="signin" class="pt-4 px-4">
               <div class="form-group">
                 <label>Email</label>
@@ -44,7 +44,7 @@
             >
             <p class="text-center">
               <router-link
-                  :to="{ name: 'Home' }"
+                  :to="{ name: 'SignUp' }"
                   class="btn btn-dark text-center mx-auto px-5 py-1 mb-2"
               >Create Your Account</router-link
               >
@@ -59,8 +59,8 @@
   import axios from "axios";
   import swal from "sweetalert";
   export default {
-    name: "SigninView",
-    props: ["baseUrl"],
+    name: "SignIn",
+    props: ["baseURL"],
     data() {
       return {
         email: null,
@@ -78,11 +78,11 @@
         };
   
         await axios
-            .post(`${this.baseUrl}/user/signin`, user)
+            .post(`${this.baseURL}/user/signin`, user)
             .then((res) => {
               localStorage.setItem("token", res.data.token);
               this.$emit("fetchData");
-              this.$router.push({ name: "HomeView" });
+              this.$router.push({ name: "Home" });
             })
             .catch((err) => {
               swal({
