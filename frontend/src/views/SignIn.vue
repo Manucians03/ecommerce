@@ -86,7 +86,7 @@
             })
             .catch((err) => {
               swal({
-                text: "Unable to Log in!",
+                text: "Unable to log in!",
                 icon: "error",
                 closeOnClickOutside: false,
               });
