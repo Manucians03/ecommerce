@@ -7,8 +7,8 @@
       </div>
       <div class="row">
         <div v-for="product of products" :key="product.id" class="col-md-6 col-xl-4 col-12 pt-3  justify-content-around d-flex">
-          <ProductBox :product="product">
-          </ProductBox>
+          <UserProductBox :product="product">
+          </UserProductBox>
         </div>
       </div>
     </div>
@@ -17,11 +17,11 @@
     <script>
     import axios from "axios";
     import swal from "sweetalert";
-    import ProductBox from "../components/ProductBox.vue";
+    import UserProductBox from "../components/UserProductBox.vue";
     
     export default {
       name: "WishList",
-      components: {ProductBox},
+      components: {UserProductBox},
       props: ["baseURL"],
       methods: {
         fetchWishlist(){

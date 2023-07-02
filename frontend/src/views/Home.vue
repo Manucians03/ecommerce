@@ -11,7 +11,7 @@
             </div>
             <div class="row">
             <div v-for="index in this.categorySize" :key="index" class="col-md-6 col-xl-4 col-12 pt-3 justify-content-around d-flex">
-                <CategoryBox :category="categories[index -1]" />
+                <UserCategoryBox :category="categories[index -1]" />
             </div>
             </div>
         </div>
@@ -23,7 +23,7 @@
                 </div>
                 <div class="row">
                 <div v-for="index in this.productSize" :key="index" class="col-md-6 col-xl-4 col-12 pt-3 justify-content-around d-flex">
-                    <ProductBox :product="products[index -1]" />
+                    <UserProductBox :product="products[index -1]" />
                 </div>
                 </div>
             </div>
@@ -32,13 +32,13 @@
   
   <script>
   
-  import CategoryBox from "../components/CategoryBox.vue"
-  import ProductBox from "../components/ProductBox.vue";
+  import UserCategoryBox from "../components/UserCategoryBox.vue"
+  import UserProductBox from "../components/UserProductBox.vue";
   export default {
     name: 'HomeView',
     components: {
-      ProductBox,
-      CategoryBox
+      UserProductBox,
+      UserCategoryBox
     },
     props: ["categories", "products"],
     data(){
