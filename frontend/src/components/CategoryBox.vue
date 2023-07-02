@@ -1,6 +1,6 @@
 <template>
-  <div class="card w-100 h-100" style="margin-top: 10px">
-    <div class="embed-responsive embed-responsive-16by9">
+  <div class="card w-100 h-100">
+    <div class="embed-responsive embed-responsive-4by3">
       <img
         class="card-img-top embed-responsive-item"
         :src="category.imageUrl"
