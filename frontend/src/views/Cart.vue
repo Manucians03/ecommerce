@@ -81,7 +81,7 @@
             }).catch(err => console.log(err));
       },
       checkOut(){
-        // this.$router.push({name: 'CheckoutView'})
+        this.$router.push({name: 'CheckOut'})
       }
     },
     mounted() {
