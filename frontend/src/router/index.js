@@ -13,6 +13,7 @@ import SignUp from '../views/SignUp.vue'
 import WishList from '../views/WishList.vue'
 import Cart from '../views/Cart.vue'
 import CheckOutSuccess from '../views/Checkout/CheckOutSuccess.vue'
+import CheckOutFailure from '../views/Checkout/CheckOutFailure.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -86,6 +87,11 @@ const router = createRouter({
       path: "/checkout/success",
       name: "CheckOutSuccess",
       component: CheckOutSuccess
+    },
+    {
+      path: "/checkout/failure",
+      name: "CheckOutFailure",
+      component: CheckOutFailure
     }
   ]
 })

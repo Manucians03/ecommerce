@@ -13,7 +13,7 @@
           <div class="col-md-5 px-3">
             <div class="card-block px-3">
               <h6 class="card-title">
-                <router-link :to="{name:'ShowDetails', params: { id: cartItem.product.id}}">
+                <router-link :to="{name:'DetailProduct', params: { id: cartItem.product.id}}">
                   {{cartItem.product.name}}
                 </router-link>
               </h6>

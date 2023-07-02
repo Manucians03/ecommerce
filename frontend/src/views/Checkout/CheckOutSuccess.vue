@@ -22,7 +22,7 @@
       saveOrder() {
         axios.post(`${this.baseURL}/order/add?token=${this.token}&sessionId=${this.sessionId}`)
             .then(()=>{
-              window.location.href = '/order';
+              window.location.href = '/cart';
             }).catch((error)=>{
           console.log(error);
         })
