@@ -12,6 +12,7 @@ import SignIn from '../views/SignIn.vue'
 import SignUp from '../views/SignUp.vue'
 import WishList from '../views/WishList.vue'
 import Cart from '../views/Cart.vue'
+import CheckOutSuccess from '../views/Checkout/CheckOutSuccess.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -80,6 +81,11 @@ const router = createRouter({
       path: "/cart",
       name: "Cart",
       component: Cart
+    },
+    {
+      path: "/checkout/success",
+      name: "CheckOutSuccess",
+      component: CheckOutSuccess
     }
   ]
 })
