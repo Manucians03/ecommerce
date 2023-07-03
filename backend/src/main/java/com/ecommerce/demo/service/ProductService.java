@@ -7,7 +7,6 @@ import com.ecommerce.demo.model.Product;
 import com.ecommerce.demo.repository.CategoryRepository;
 import com.ecommerce.demo.repository.ProductRepository;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
@@ -15,7 +14,6 @@ import java.util.Optional;
 
 
 @Service
-@Slf4j
 @RequiredArgsConstructor
 public class ProductService {
     private final ProductRepository productRepository;
@@ -23,12 +21,9 @@ public class ProductService {
 
 
     public Product createProduct(ProductDto productDto) {
-        System.out.println(productDto.getDescription());
         Category category = categoryRepository.findById(productDto.getCategoryId())
                 .orElseThrow(() -> new RuntimeException("Category does not exist with id: " + productDto.getCategoryId()));
         Product product = new Product();
-        log.warn(category.toString());
-        log.warn(productDto.toString());
         product.setDescription(productDto.getDescription());
         product.setImageUrl(productDto.getImageUrl());
         product.setName(productDto.getName());
@@ -78,6 +73,12 @@ public class ProductService {
             throw new ProductNotExistException("Product is not valid " +productId);
         }
         return product.get();
+    }
+
+    public void deleteProduct(String productId) {
+        Product product = productRepository.findById(Integer.parseInt(productId))
+                .orElseThrow(() -> new RuntimeException("Product does not exist with id: " + productId));
+        productRepository.delete(product);
     }
 }
 

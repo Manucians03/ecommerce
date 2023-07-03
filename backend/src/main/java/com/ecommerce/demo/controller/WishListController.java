@@ -28,7 +28,6 @@ public class WishListController {
         wishList.setUser(user);
         wishList.setProduct(product);
         wishList.setCreatedDate(new Date());
-        System.out.println(wishList);
         return new ResponseEntity<>(wishListService.createWishList(wishList), HttpStatus.CREATED);
     }
     @GetMapping("/{token}")
@@ -36,5 +35,10 @@ public class WishListController {
         authenticationService.authenticate(token);
         User user = authenticationService.getUser(token);
         return new ResponseEntity<>(wishListService.getWishListForUser(user), HttpStatus.OK);
+    }
+    @DeleteMapping("/delete/{wishListId}")
+    public ResponseEntity<String> deleteWishList(@PathVariable Integer wishListId){
+        wishListService.deleteWishList(wishListId);
+        return new ResponseEntity<>("Wishlist deleted successfully", HttpStatus.OK);
     }
 }

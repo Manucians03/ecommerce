@@ -25,4 +25,8 @@ public class WishListService {
         }
         return productDtos;
     }
+
+    public void deleteWishList(Integer wishListId) {
+        wishListRepository.deleteById(wishListId);
+    }
 }

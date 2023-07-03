@@ -12,13 +12,13 @@
                 <h5 class="card-title">{{ product.name }}</h5>
             </router-link>
             <p class="card-text"> {{ product.description.substring(0, 65) }}</p>
-            
+
         </div>
     </div>
 </template>
 <script>
     export default {
-        name: "ProductBox",
+        name: "UserProductBox",
         props: ["product"]
     }
 </script>

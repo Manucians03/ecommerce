@@ -29,12 +29,18 @@ public class CartService {
         User user = authenticationService.getUser(token);
         Product product = productRepository.findById(cartDto.getProductId())
                 .orElseThrow(()->new ProductNotExistException("Product is not valid " + cartDto.getProductId()));
-        Cart cart = new Cart();
-        cart.setProduct(product);
-        cart.setUser(user);
-        cart.setQuantity(cartDto.getQuantity());
-        cart.setCreatedDate(new Date());
-        return cartRepository.save(cart);
+        Cart cartExists = cartRepository.findByUserIdAndProductId(user.getId(), cartDto.getProductId());
+        if (cartExists != null) {
+            cartExists.setQuantity(cartExists.getQuantity() + cartDto.getQuantity());
+            return cartRepository.save(cartExists);
+        } else {
+            Cart cart = new Cart();
+            cart.setProduct(product);
+            cart.setUser(user);
+            cart.setQuantity(cartDto.getQuantity());
+            cart.setCreatedDate(new Date());
+            return cartRepository.save(cart);
+        }
     }
 
     public CartResponseDto getAllItemsFromCart(String token) {

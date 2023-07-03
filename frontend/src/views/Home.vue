@@ -1,7 +1,7 @@
 <template>
     <div id="home" >
         <div class="container py-5">
-            <h3 class="mb-4 rounded " id="heading"> Welcome to the E-Commerce </h3>
+            <h3 id="heading"> Welcome to the E-Commerce </h3>
         </div>
         <div class="container">
             <div class="row">
@@ -34,6 +34,7 @@
   
   import UserCategoryBox from "../components/UserCategoryBox.vue"
   import UserProductBox from "../components/UserProductBox.vue";
+  import swal from "sweetalert";
   export default {
     name: 'HomeView',
     components: {
@@ -48,6 +49,13 @@
       }
     },
     mounted() {
+      if (!window.localStorage.getItem("token")) {
+        swal({
+          text: "You need to sign in first!",
+          icon: "error"
+        });
+        this.$router.push({name: 'SignIn'});
+      }
       this.categorySize=Math.min(6, this.categories.length);
       this.productSize=Math.min(6, this.products.length);
     }
@@ -62,6 +70,7 @@
   }
   #heading{
     font-weight: 400;
+    justify-content: center;
   }
   </style>
   

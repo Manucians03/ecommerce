@@ -57,7 +57,7 @@
         localStorage.removeItem("token")
         this.token = null;
         swal({
-          text: "You have logged out. See you later!)",
+          text: "You have logged out. See you later!",
           icon: "success"
         });
         this.$emit("resetCartCount");
