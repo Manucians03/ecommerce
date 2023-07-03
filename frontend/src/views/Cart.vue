@@ -31,10 +31,9 @@
             <a href="#" class="text-end" @click="deleteItem(cartItem.id)">Remove from cart</a>
           </div>
           <div class="col-2"></div>
-          <div class="col-12"><hr /></div>
         </div>
         <div class="total-cost pt-2 text-right">
-          <h5>Total : $ {{ totalCost.toFixed(2) }}</h5>
+          <h5>Total: $ {{ totalCost.toFixed(2) }}</h5>
           <button type="button" class="btn btn-primary confirm" @click="checkOut">Confirm Order</button>
         </div>
     </div>

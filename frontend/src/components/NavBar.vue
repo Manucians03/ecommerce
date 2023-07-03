@@ -1,5 +1,5 @@
 <template>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar">
         <!--    Logo-->
         <router-link class="navbar-brand" :to="{name : 'Home'}">
             <img id="logo" src="../assets/amazon.jpeg" style="max-height: 70px; max-width: 100px "/>
@@ -76,10 +76,10 @@
     margin-right: 20px;
   }
   
-  .nav-link {
-    color: rgba(255,255,255);
+  .navbar {
+    background-color: #e3e6ef;
   }
-  
+
   #search-button-navbar {
     background-color: #febd69;
     border-color: #febd69;
@@ -93,8 +93,8 @@
     background-color: red;
     color: white;
     border-radius: 50%;
-    height: 15px;
-    width: 15px;
+    height: 20px;
+    width: 20px;
     font-size: 15px;
     align-items: center;
     display: flex;
@@ -102,4 +102,9 @@
     position: absolute;
     margin-left: 10px;
   }
+
+  i {
+    color: black;
+  }
+
   </style>
