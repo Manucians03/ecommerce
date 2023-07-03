@@ -61,7 +61,6 @@
     mounted() {
       this.id = this.$route.params.id;
       this.product = this.products.find((product) => product.id == this.id);
-      console.log(this.product);
       this.category = this.categories.find((category) => category.id == this.product.categoryId);
       this.token = localStorage.getItem("token");
     },
@@ -74,8 +73,8 @@
           });
           return;
         }
-        axios.post(`${this.baseURL}/wish-list/add?token=${this.token}`, {
-          id: this.product.id,
+        axios.post(`${this.baseURL}/wishlist/add?token=${this.token}`, {
+          productId: this.product.id,
         }).then((res) => {
           if(res.status === 201){
             this.wishListString = "Added to Wishlist";
