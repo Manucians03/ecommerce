@@ -5,9 +5,15 @@
         </div>
         <div class="container">
             <div class="row">
-            <div class="col-12 text-center">
-                <h2 class="pt-3">Top Categories</h2>
-            </div>
+              <div class="col-1"></div>
+              <div class="col-10 text-center">
+                  <h2 class="pt-3">Top Categories</h2>
+              </div>
+              <div class="col-1 show-all">
+                  <router-link :to="{name: 'ViewCategory'}">
+                      Show All
+                  </router-link>
+              </div>
             </div>
             <div class="row">
             <div v-for="index in this.categorySize" :key="index" class="col-md-6 col-xl-4 col-12 pt-3 justify-content-around d-flex">
@@ -17,11 +23,17 @@
         </div>
         <div class="container py-2">
             <div class="row">
-                <div class="col-12 text-center">
-                    <h2 class="pt-3">Top Products</h2>
-                </div>
-                </div>
-                <div class="row">
+              <div class="col-1"></div>
+              <div class="col-10 text-center">
+                  <h2 class="pt-3">Top Products</h2>
+              </div>
+              <div class="col-1 show-all">
+                  <router-link :to="{name: 'ViewProduct'}">
+                      Show All
+                  </router-link>
+              </div>
+            </div>
+            <div class="row">
                 <div v-for="index in this.productSize" :key="index" class="col-md-6 col-xl-4 col-12 pt-3 justify-content-around d-flex">
                     <UserProductBox :product="products[index -1]" />
                 </div>
@@ -70,6 +82,11 @@
   }
   #heading{
     font-weight: 400;
+    justify-content: center;
+  }
+  .show-all{
+    display: flex;
+    align-items: center;
     justify-content: center;
   }
   </style>
