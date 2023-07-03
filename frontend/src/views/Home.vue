@@ -1,8 +1,5 @@
 <template>
     <div id="home">
-        <div class="container py-5">
-            <h3 id="heading"> Welcome to the E-Commerce </h3>
-        </div>
         <div class="container">
             <div class="row">
               <div class="col-1"></div>

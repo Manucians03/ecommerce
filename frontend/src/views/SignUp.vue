@@ -3,7 +3,7 @@
       <div class="row">
         <div class="col-12 justify-content-center d-flex flex-row pt-5">
           <div id="signup-div" class="flex-item border">
-            <h2 class="pt-4 pl-4">Create Account</h2>
+            <h2 class="text-center pt-4 pl-4">Create Account</h2>
             <form @submit="signup" class="pt-4 pl-4 pr-4">
               <div class="form-group">
                 <label>Email</label>
@@ -56,9 +56,11 @@
                     required
                 />
               </div>
-              <button type="submit" class="btn btn-primary mt-2 py-0">
-                Create Account
-              </button>
+              <div class="text-center">
+                <button type="submit" class="btn btn-primary mt-2 py-0">
+                  Create Account
+                </button>
+              </div>
             </form>
             <hr />
             <small class="form-text text-muted pt-2 pl-4 text-center"

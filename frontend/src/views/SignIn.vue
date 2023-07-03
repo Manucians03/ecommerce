@@ -2,8 +2,8 @@
     <div class="container">
       <div class="row">
         <div class="col-12 justify-content-center d-flex flex-row pt-5">
-          <div id="signin-div" class="flex-item border">
-            <h2 class="pt-4 ps-4">Sign In</h2>
+          <div id="signin-div" class="flex-item border" >
+            <h2 class="text-center pt-4 ps-4">Sign In</h2>
             <form @submit="signin" class="pt-4 px-4">
               <div class="form-group">
                 <label>Email</label>
@@ -24,19 +24,12 @@
                 />
               </div>
               <small class="form-text text-muted"
-              >By continuing, you agree to our Conditions of Use and
-                Privacy Notice.</small
-              >
-              <button type="submit" class="btn btn-primary mt-2 py-0">
+              >By continuing, you agree to our Conditions of Use and Privacy Notice.</small>
+              <div class="text-center">
+                <button type="submit" class="btn btn-primary mt-2 py-0">
                 Continue
-                <div
-                    v-if="loading"
-                    class="spinner-border spinner-border-sm"
-                    role="status"
-                >
-                  <span class="sr-only">Loading...</span>
-                </div>
               </button>
+              </div>
             </form>
             <hr />
             <small class="form-text text-muted pt-2 pl-4 text-center"
@@ -119,10 +112,5 @@
   }
   #logo {
     width: 150px;
-  }
-  @media only screen and (min-width: 992px) {
-    #signin-div {
-      width: 40%;
-    }
   }
   </style>

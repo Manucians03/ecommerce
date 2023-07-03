@@ -8,7 +8,7 @@
       </div>
       <div class="row">
         <div v-for="p of this.product" :key="p.id" class="col-md-6 col-xl-4 col-12 pt-3 justify-content-around d-flex">
-          <ProductBox :product="p" />
+          <UserProductBox :product="p" />
         </div>
   
       </div>
@@ -16,10 +16,10 @@
   </template>
   
   <script>
-  import ProductBox from "../../components/ProductBox.vue";
+  import UserProductBox from "../../components/UserProductBox.vue";
   export default {
     name: "DetailCategory",
-    components: {ProductBox},
+    components: {UserProductBox},
     props: ["categories", "products"],
     data(){
       return {
