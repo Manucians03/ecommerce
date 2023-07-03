@@ -1,5 +1,5 @@
 <template>
-    <div id="home" >
+    <div id="home">
         <div class="container py-5">
             <h3 id="heading"> Welcome to the E-Commerce </h3>
         </div>

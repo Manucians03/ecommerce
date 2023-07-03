@@ -2,25 +2,25 @@
     <div class="container">
         <div class="row">
             <div class="col-12 text-center">
-                <h4> Our Products</h4>
-                <router-link :to="{name: 'AddProduct'}" style="float: right">
+                <h3 class="pt-3">All Products</h3>
+                <!-- <router-link :to="{name: 'AddProduct'}" style="float: right">
                     <button class="btn" >
                         Add Product
-                    </button> </router-link>
+                    </button> </router-link> -->
             </div>
         </div>
         <div class="row">
             <div v-for="product of products" :key="product.id"
                  class="col-md-6 col-xl-4 col-12 pt-3 d-flex">
-                <ProductBox :product="product"/>
+                <UserProductBox :product="product"/>
             </div>
         </div>
     </div>
 </template>
 <script>
-    import ProductBox from "../../components/ProductBox.vue";
+    import UserProductBox from "../../components/UserProductBox.vue";
     export default {
-        components: {ProductBox},
+        components: {UserProductBox},
         props:["products"]
     }
 </script>

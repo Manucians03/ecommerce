@@ -7,7 +7,7 @@
 
         <!--      Search Bar-->
         <div id="navbarSearch">
-            <form class="form-inline ms-auto me-auto">
+            <form class="form-inline ms-auto me-auto" @submit.prevent="handleSearch">
             <div class="input-group">
                 <input size="100" type="text" class="form-control" placeholder="Search Items" aria-label="Username" aria-describedby="basic-addon1">
                 <div class="input-group-prepend">
@@ -25,6 +25,11 @@
             <span id="nav-cart-count">{{cartCount}}</span>
             <router-link class="text-light" :to="{ name: 'Cart' }">
                 <i class="fa fa-shopping-cart" style="font-size:36px"></i>
+            </router-link>
+        </div>
+        <div id="wishlist">
+            <router-link class="text-light" :to="{ name: 'WishList' }">
+                <i class="fa fa-heart" style="font-size:36px"></i>
             </router-link>
         </div>
         <div id="account">
@@ -61,6 +66,10 @@
           icon: "success"
         });
         this.$emit("resetCartCount");
+      },
+      handleSearch(){
+        let query = document.querySelector("input").value;
+        window.location.href = `/search/${query}`;
       }
     },
     mounted() {

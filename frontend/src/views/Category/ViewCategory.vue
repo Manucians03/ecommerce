@@ -3,10 +3,10 @@
     <div class="container">
       <div class="row">
         <div class="col-12 text-center">
-          <h3 class="pt-3">Our Categories</h3>
-          <router-link :to="{ name: 'AddCategory' }">
+          <h3 class="pt-3">All Categories</h3>
+          <!-- <router-link :to="{ name: 'AddCategory' }">
             <button class="btn" style="float:right">Add Category</button>
-          </router-link>
+          </router-link> -->
         </div>
       </div>
       <div class="row">
@@ -15,17 +15,17 @@
           :key="category.id"
           class="col-xl-4 col-md-6 col-12 pt-3 d-flex"
         >
-          <CategoryBox :category="category"> </CategoryBox>
+          <UserCategoryBox :category="category"> </UserCategoryBox>
         </div>
       </div>
     </div>
   </template>
   <script>
   import axios from "axios";
-  import CategoryBox from "../../components/CategoryBox.vue";
+  import UserCategoryBox from "../../components/UserCategoryBox.vue";
   export default {
     name: "CategoryList",
-    components: { CategoryBox },
+    components: { UserCategoryBox },
     data() {
       return {
         baseURL: "http://localhost:8080",

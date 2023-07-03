@@ -15,6 +15,7 @@ import Cart from '../views/Cart.vue'
 import CheckOut from '../views/Checkout/CheckOut.vue'
 import CheckOutSuccess from '../views/Checkout/CheckOutSuccess.vue'
 import CheckOutFailure from '../views/Checkout/CheckOutFailure.vue'
+import SearchResult from '../views/SearchResult.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -98,6 +99,11 @@ const router = createRouter({
       path: "/checkout/failure",
       name: "CheckOutFailure",
       component: CheckOutFailure
+    },
+    {
+      path: "/search/:query",
+      name: "SearchResult",
+      component: SearchResult
     }
   ]
 })

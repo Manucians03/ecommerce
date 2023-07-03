@@ -25,5 +25,4 @@ public class WishList {
     @JoinColumn(name = "product_id")
     @JsonIgnoreProperties(value = {"applications", "hibernateLazyInitializer"})
     private Product product;
-
 }

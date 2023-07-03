@@ -9,6 +9,5 @@ import java.util.List;
 public class CartResponseDto {
     private List<CartItemDto> cartItems;
     private Double totalCost;
-
 }
 
