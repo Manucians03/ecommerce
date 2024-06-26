@@ -12,7 +12,7 @@
   import axios from "axios";
   
   export default {
-    name: "CheckOutView",
+    name: "CheckOut",
     props: ["baseURL"],
     methods: {
       getAllItems(){
@@ -20,12 +20,11 @@
             .then((res) => {
               if(res.status === 200){
                 let products = res.data;
+                console.log(products);
                 for(let i = 0; i< products.cartItems.length; i++){
                   this.checkoutBodyArray.push({
-                    price: products.cartItems[i].product.price,
                     quantity: products.cartItems[i].quantity,
-                    productId: products.cartItems[i].product.id,
-                    productName: products.cartItems[i].product.name
+                    productId: products.cartItems[i].product.id
                   });
                 }
               }
@@ -43,7 +42,7 @@
     },
     data(){
       return {
-        stripeApiToken:"pk_test_51KzLpzFB4AxkeetMmU2FkCm9Re2adwfJBPnUuMNO1XBoBXjAjT4qnZwZIcJX9X8KdTbw4Kx2fQ1c6zxshBfCgTtb00MMFARmqy",
+        stripeApiToken:"pk_test_51PNHWS01wH6xJXP6Q7OL2eRjpfr8DPrMEErb9V00lbO39yVFKKy0ThACM9nJhAKducpKgmwFuFzfsWEiF19tzLCn00tr7Ili5F",
         stripe: "",
         token: null,
         checkoutBodyArray: []
@@ -53,7 +52,6 @@
       this.token = localStorage.getItem("token");
       this.stripe = window.Stripe(this.stripeApiToken);
       this.getAllItems();
-      this.goCheckOut();
     }
   }
   </script>
