@@ -22,12 +22,12 @@ public class OrderService {
     @Value("${BASE_URL}")
     private String baseUrl;
     public Session createSession(List<CheckoutItemDto> checkoutItemDtoList) throws StripeException {
-        String successUrl = baseUrl + "/success";
-        String failureUrl = baseUrl + "/failure";
+        String successUrl = baseUrl + "/";
+        String failureUrl = baseUrl + "/cart";
         Stripe.apiKey = apiKey;
         List<SessionCreateParams.LineItem> sessionItemList = new ArrayList<>();
         for(CheckoutItemDto checkoutItemDto: checkoutItemDtoList) {
-            Product product = productRepository.findById(checkoutItemDto.getProductId()).orElseThrow();
+            Product product = productRepository.findById(checkoutItemDto.getProductId()).orElseThrow(() -> new RuntimeException("Product not found"));
             sessionItemList.add(createSessionLineItem(product, checkoutItemDto));
         }
         SessionCreateParams params = SessionCreateParams.builder()

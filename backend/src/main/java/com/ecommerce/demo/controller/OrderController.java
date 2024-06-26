@@ -22,6 +22,5 @@ public class OrderController {
         Session session = orderService.createSession(checkoutItemDtoList);
         StripeResponseDto stripeResponse = new StripeResponseDto(session.getId());
         return new ResponseEntity<>(stripeResponse, HttpStatus.OK);
-
     }
 }
